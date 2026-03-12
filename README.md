@@ -2,10 +2,10 @@
 
 ## 📊 Funcionalidades Implementadas no Protótipo
 
-- ✅ Integração com Google Gemini API
-- ✅ Persistência em SQLite com SQLAlchemy ORM
-- ✅ API REST com FastAPI
-- ✅ Cliente terminal com interface rica (Rich)
+- ✅ Integração com [Google Gemini API](https://ai.google.dev/gemini-api/docs)
+- ✅ Persistência em [SQLite](https://sqlite.org/) com [SQLAlchemy](https://www.sqlalchemy.org/) ORM
+- ✅ API REST com [FastAPI](https://fastapi.tiangolo.com/)
+- ✅ Cliente terminal com interface rica ([Rich](https://rich.readthedocs.io/en/latest/introduction.html))
 - ✅ Gerenciamento de sessões (apenas enquanto o cliente está ativo)
 - ✅ Histórico de conversas
 - ✅ Contagem de tokens
@@ -41,7 +41,7 @@ chatbot_cli_gemini
 
 Existe uma estrutura base que vamos seguir para a construção de nossas aplicações FastAPI.
 
-Vamos usar o gerenciador de pacotes uv.
+Vamos usar o gerenciador de pacotes [uv](https://github.com/astral-sh/uv).
 
 ### 1. As variáveis de ambiente da aplicação são configuradas via .evn
 
@@ -71,22 +71,24 @@ Inicializa o ambiente client. Ative o venv e execute no diretório raiz do proje
 ./start_client.sh IP_Servidor
 ```
 
-### 4. Após os scripts de inicialização terem sido executados 
+### 3. Após os scripts de inicialização terem sido executados 
 
-**4.1 Executar a aplicação backend**
+**3.1 Executar a aplicação direto pelo uvicorn backend**
 
 Vá até o diretório gemini_chatbot/backend
 ```bash
-python3 run.py
+uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-**4.2 Executar a aplicação cliente em um novo terminal**
+**3.2 Executar a aplicação cliente em um novo terminal**
 
 Vá até o diretório gemini_chatbot/client
 ```bash
 python3 chat_client.py IP_Servidor
 ```
 
-### 5. Observações
+### 4. Observações
 
 Este protótipo só mantem o histórico das mensagens do cliente enquanto sua sessão estiver aberta, ou seja, assim que o cliente fechar sua sessão ele não consegue mais acessar seu histórico. Entretanto, a aplicação backend possui um banco que armazena todas as mensagens de todos os clientes que acessaram a aplicação pelo menos uma vez.
+
+Em caso de dúvidas, pode enviar um e-mail para armando@ufpi.edu.br
