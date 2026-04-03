@@ -20,7 +20,7 @@ HEALTH_ENDPOINTS = ["/health", "/", "/chat", "/api/health"]
 
 # Painéis pré-definidos para reutilização
 PAINEL_BANNER = Panel.fit(
-    "[bold blue]🤖 Gemini ChatBot[/bold blue]\n"
+    "[bold blue]🤖 LLM ChatBot[/bold blue]\n"
     "Digite 'sair' para encerrar ou 'ajuda' para comandos",
     border_style="green",
     padding=(1, 2)

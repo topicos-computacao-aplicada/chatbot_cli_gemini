@@ -10,7 +10,7 @@ from datetime import datetime
 
 # Configuração da página
 st.set_page_config(
-    page_title="🤖 Gemini ChatBot",
+    page_title="🤖 LLM ChatBot",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -384,7 +384,7 @@ def render_sidebar():
 
 def render_chat_interface():
     """Renderiza a interface principal do chat"""
-    st.title("🤖 Gemini ChatBot")
+    st.title("🤖 LLM ChatBot")
     st.caption(f"🔗 {st.session_state.api_url} | 🆔 `{st.session_state.session_id[:8]}...`")
     
     # Exibe histórico de mensagens

@@ -2,10 +2,11 @@ from dotenv import load_dotenv
 import os
 import google.generativeai as genai
 from typing import List, Dict
+from app.llm_client_interface import LLMClientInterface
 
 load_dotenv()
 
-class GeminiClient:
+class GeminiClient(LLMClientInterface):
     def __init__(self):
         self.api_key = os.getenv("GEMINI_API_KEY")
         self.model_name = os.getenv("GEMINI_MODEL", "gemini-pro")
